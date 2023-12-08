@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace DotNetDynamosRevamp
 {
-    internal class Admin
+    internal partial class Admin : User, IAdminMethods
     {
+        public void UserList()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

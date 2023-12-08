@@ -8,10 +8,6 @@ namespace DotNetDynamosRevamp
 {
     internal partial class Admin : User, IAdminMethods
     {
-        public void Menu(Admin loggedInAdmin)
-        {
-            throw new NotImplementedException();
-        }
 
         public void RegisterAdmin()
         {
@@ -41,17 +37,6 @@ namespace DotNetDynamosRevamp
 
             // Display user information
             Console.WriteLine($"User registered!\nUsername: {_username}\nID Number:{_IDnumber}\nFirst name: {_firstname}\nLast name: {_lastname}\nPassword: {Password}");
-        }
-
-        public void RegisterCustomer()
-        {
-            Customer customer = new Customer();
-            customer.RegisterUser();
-        }
-
-        public void UserList()
-        {
-            throw new NotImplementedException();
         }
     }
 }
