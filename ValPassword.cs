@@ -8,6 +8,11 @@ namespace DotNetDynamosRevamp
 {
     internal class ValPassword
     {
+        /// <summary>
+        /// Metod för att validera lösenord.
+        /// </summary>
+        /// <param name="password"></param>
+        /// <returns></returns>
         public bool ValidatePassword(string password)
         {
             if (IsBetweenAllowedChar(password)

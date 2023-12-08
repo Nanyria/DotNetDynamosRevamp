@@ -8,9 +8,12 @@ namespace DotNetDynamosRevamp
 {
     internal partial class Admin : User, IAdminMethods
     {
+        /// <summary>
+        /// Implementering av AdminMenu.
+        /// </summary>
         public void Menu(Admin loggedInAdmin)
         {
-            throw new NotImplementedException();
+
         }
 
     }

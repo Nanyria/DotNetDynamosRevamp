@@ -8,6 +8,9 @@ namespace DotNetDynamosRevamp
 {
     internal interface IAdminMethods
     {
+        /// <summary>
+        /// Alla metoder som Admin behöver lagras här.
+        /// </summary>
         void RegisterCustomer();
         void RegisterAdmin();
         void Menu(Admin loggedInAdmin); //Förklara vidare senare

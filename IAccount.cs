@@ -8,6 +8,9 @@ namespace DotNetDynamosRevamp
 {
     internal interface IAccount
     {
+        /// <summary>
+        /// Information för vad Account behöver innehålla lagras här.
+        /// </summary>
         public int _accountNumber { get; set; }
         public string _accountName { get; set; }
         public string _currency { get; set; }

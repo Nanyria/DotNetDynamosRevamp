@@ -8,6 +8,9 @@ namespace DotNetDynamosRevamp
 {
     internal class User : IUserInfo
     {
+        /// <summary>
+        /// Lagrar information som alla användare behöver (inte klar)
+        /// </summary>
         public string Username { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public int IDNumber { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
         public string FirstName { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }

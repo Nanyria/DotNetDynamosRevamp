@@ -7,10 +7,13 @@ using System.Threading.Tasks;
 namespace DotNetDynamosRevamp
 {
     internal partial class Admin : User, IAdminMethods
-    {
+    { 
+        /// <summary>
+        /// Implementering av UserList.
+        /// </summary>
         public void UserList()
         {
-            throw new NotImplementedException();
+
         }
     }
 }

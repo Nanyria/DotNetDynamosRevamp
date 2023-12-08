@@ -8,7 +8,9 @@ namespace DotNetDynamosRevamp
 {
     internal partial class Admin : User, IAdminMethods
     {
-       
+        /// <summary>
+        /// Implementering av RegisterCustomer.
+        /// </summary>
         public void RegisterCustomer()
         {
             Customer customer = new Customer();

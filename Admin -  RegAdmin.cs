@@ -8,7 +8,9 @@ namespace DotNetDynamosRevamp
 {
     internal partial class Admin : User, IAdminMethods
     {
-
+        /// <summary>
+        /// Implementering av RegisterAdmin.
+        /// </summary>
         public void RegisterAdmin()
         {
             Console.WriteLine("Welcome to User Registration!");
