@@ -13,37 +13,35 @@ namespace DotNetDynamosRevamp
         /// </summary>
         /// <param name="password"></param>
         /// <returns></returns>
+
         public bool ValidatePassword(string password)
         {
-            if (IsBetweenAllowedChar(password))
-            {
-                if (ContainsCapitolLetter(password))
-                {
-                    if (ContainsDigit(password))
-                    {
-                        if (ContainsSymbol(password))
-                        {
-                            _password = value;
-                        }
-                        else
-                        {
-                            Console.WriteLine("Invalid password. Must contain at least one symbol.");
-                        }
-                    }
-                    else
-                    {
-                        Console.WriteLine("Invalid password. Must contain at least one digit");
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Invalid password. Please use min. one upper-case letter.");
-                }
-            }
-            else
+            bool isBetweenChars = IsBetweenAllowedChar(password);
+            bool containsCapital = ContainsCapitolLetter(password);
+            bool containsDigit = ContainsDigit(password);
+            bool containsSymbol = ContainsSymbol(password);
+
+            if (!isBetweenChars)
             {
                 Console.WriteLine("Invalid password. Please enter a password between 6-12 characters.");
+                return false;
             }
+            if (!containsCapital)
+            {
+                Console.WriteLine("Invalid password. Please use at least one upper-case letter.");
+                return false;
+            }
+            if (!containsDigit)
+            {
+                Console.WriteLine("Invalid password. Please use at least one digit.");
+                return false;
+            }
+            if (!containsSymbol)
+            {
+                Console.WriteLine("Invalid password. Must contain at least one symbol.");
+                return false;
+            }
+
             return true;
         }
         // Function to validate if the input is between 6-12 char.
@@ -90,8 +88,6 @@ namespace DotNetDynamosRevamp
             }
             return false;
         }
-
-
 
 
     }

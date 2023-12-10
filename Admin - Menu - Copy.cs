@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace DotNetDynamosRevamp
 {
-    internal partial class Admin : IAdminMethods
+    internal partial class Admin : User, IAdminMethods
     {
         /// <summary>
-        /// Implementering av RegisterCustomer.
+        /// Implementering av AdminMenu.
         /// </summary>
-        public void RegisterCustomer()
+        public void Menu(Admin loggedInAdmin)
         {
-            Customer customer = new Customer();
-            customer.RegisterUser();
+
         }
+
     }
 }

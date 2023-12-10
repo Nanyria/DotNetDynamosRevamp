@@ -11,6 +11,7 @@ namespace DotNetDynamosRevamp
         /// <summary>
         /// Alla metoder som Admin behöver lagras här.
         /// </summary>
+        Admin Login();
         void RegisterCustomer();
         void RegisterAdmin();
         void Menu(Admin loggedInAdmin); //Förklara vidare senare

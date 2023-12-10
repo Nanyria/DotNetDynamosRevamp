@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Text.RegularExpressions; //Lagt till denna för att komma åt en redan färdig metod för att undersöka email. /N
 
 namespace DotNetDynamosRevamp
 {
@@ -15,7 +16,9 @@ namespace DotNetDynamosRevamp
         /// <returns></returns>
         public bool IsValidEmail(string email)
         {
-            return email.Contains("@") && email.Contains(".");
+            // Ett regex pattern för email validation.
+            string emailPattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
+            return Regex.IsMatch(email, emailPattern);
         }
     }
 }

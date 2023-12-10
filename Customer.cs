@@ -93,28 +93,13 @@ namespace DotNetDynamosRevamp
 
 
 
-        public Customer() : this("No username provided.", 0000, "No firstname provided.", "No lastname provided.", "No password provided", "no email provided", "0000-00-00", new List<Account>()) //Se över hur vi skapar null i List Acc//N
+        public Customer() : this("No username provided.", 0000, "No firstname provided.", "No lastname provided.", "No password provided", "no email provided", "0000-00-00", new List<Account>())
         {
-
         }
 
         public Customer(string username, int IDnumber, string firstname, string lastname, string password, string email, string birthday, List<Account> accounts)
         {
-            _username = username;
-            _IDNumber = IDnumber;
-            _firstName = firstname;
-            _lastName = lastname;
-            Password = password;
-            _email = email;
-            Birthday = birthday;
-            _accounts = accounts;
-
-            // Create a new bank account for the user
-            //Account MainAccount = new Account
-            //{
-            //    AccountNumber = Account.GenerateAccountNumber(_IDnumber),// Generate a unique account number
-            //    Balance = 0 // Initial balance can be set as needed
-            //};
+            // Set properties here...
         }
 
 

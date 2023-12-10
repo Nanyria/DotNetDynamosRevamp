@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DotNetDynamosRevamp
 {
-    internal partial class Admin : User, IAdminMethods
+    internal partial class Admin : IAdminMethods
     {
         /// <summary>
         /// Implementering av AdminMenu.
