@@ -7,18 +7,25 @@ using System.Text.RegularExpressions; //Lagt till denna för att komma åt en re
 
 namespace DotNetDynamosRevamp
 {
-    internal partial class Validate
+    public class ValidateEmail
     {
         /// <summary>
         /// Metod för att validera email.
         /// </summary>
         /// <param name="password"></param>
         /// <returns></returns>
-        public bool IsValidEmail(string email)
+        ICustomer _customer;
+        public ValidateEmail(ICustomer customer) 
+        { 
+            _customer = customer;
+        }
+
+        public bool IsValidEmail()
         {
             // Ett regex pattern för email validation.
             string emailPattern = @"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$";
-            return Regex.IsMatch(email, emailPattern);
+            return Regex.IsMatch(Customer., emailPattern);
         }
     }
+
 }

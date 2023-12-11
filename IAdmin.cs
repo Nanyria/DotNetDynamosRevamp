@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DotNetDynamosRevamp
 {
-    internal interface IUser
+    public interface IAdmin
     {
         /// <summary>
         /// Lagrar information som alla användare behöver för att

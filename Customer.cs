@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace DotNetDynamosRevamp
 {
 
-    internal partial class Customer : IUser, ICustomer
+    public class Customer : ICustomer
     {
         private string _username;
         private int _IDNumber;

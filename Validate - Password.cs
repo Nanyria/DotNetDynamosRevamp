@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace DotNetDynamosRevamp
 {
-    internal partial class Validate
+    public class ValidatePW
     {
         /// <summary>
         /// Metod för att validera lösenord.
@@ -91,4 +92,5 @@ namespace DotNetDynamosRevamp
 
 
     }
+
 }
