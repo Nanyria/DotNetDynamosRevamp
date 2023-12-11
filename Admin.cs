@@ -9,7 +9,7 @@ namespace DotNetDynamosRevamp
     public class Password
     {
         IAdmin _admin;
-        
+
         public Password(IAdmin admin)
         {
             _admin = admin;
@@ -17,7 +17,7 @@ namespace DotNetDynamosRevamp
         public string SetPassword()
         {
             _admin.Password = Password
-            { 
+            {
             }
 
         }
@@ -101,10 +101,10 @@ namespace DotNetDynamosRevamp
 
     }
 
-    public class RegisterAdmin 
+    public class Admin
     {
         IAdmin _admin;
-        public RegisterAdmin(IAdmin admin)
+        public Admin(IAdmin admin)
         {
             _admin = admin;
         }
@@ -112,7 +112,7 @@ namespace DotNetDynamosRevamp
         /// <summary>
         /// Implementering av RegisterAdmin.
         /// </summary>
-        public void RegisterAdminMethod()
+        public Admin RegisterAdminMethod()
         {
             Console.WriteLine("Welcome to User Registration!");
 
@@ -132,9 +132,9 @@ namespace DotNetDynamosRevamp
             Console.Write("Password must contain:\n6-12 characters\nAt least one capitol letter\nAt least one digit\nAt least one symbol\nEnter password: ");
             _admin.Password = Console.ReadLine();
 
-            _admin.IDNumber = nextAdID++;
+            //_admin.IDNumber = nextAdID++;
 
-            //Admin newAdmin = new Admin(_username, _IDnumber, _firstname, _lastname, Password);
+            Admin newAdmin = new Admin(_admin.Username, _admin.IDNumber, _admin.FirstName, _admin.LastName, _admin.Password);
 
             AdminUsers.Add(_admin.Username, _admin);
 
@@ -143,7 +143,61 @@ namespace DotNetDynamosRevamp
         }
 
     }
-    public class AdminMenu 
+
+    public class AdminUserList : IAdminDictionary
+    {
+        /// <summary>
+        /// Implementering av IAdminDictionary /N.
+        /// </summary>
+
+        private Dictionary<string, IAdmin> adminUsers = new Dictionary<string, IAdmin>();
+
+        public void AddAdmin(string username, IAdmin admin)
+        {
+            adminUsers.Add(username, admin);
+        }
+
+        public IAdmin GetAdmin(string username)
+        {
+            if (adminUsers.ContainsKey(username))
+            {
+                return adminUsers[username];
+            }
+            else
+            {
+                return null;
+            }
+        }
+        /// <summary>
+        /// Explanation:
+        /// The GetAdmin method in AdminUserList loops through the stored admins and 
+        /// creates a new dictionary (adminData) to hold the admin data as objects.
+        /// It populates this new dictionary with admin data from the adminUsers dictionary by 
+        /// iterating through the key-value pairs and adding them to the new dictionary.
+        /// Finally, it returns this dictionary containing admin data as objects.
+        /// 
+        /// This implementation allows you to retrieve admin data in the form of a dictionary of 
+        /// string keys and object values, where the objects hold the admin information stored 
+        /// in the IAdmin instances. Adjust it further according to your specific needs and the 
+        /// structure of your admin-related data.
+        /// </summary>
+        /// <returns></returns>
+
+        public Dictionary<string, object> GetAdmin()
+        {
+            // Create a new dictionary to hold the admin data as objects
+            Dictionary<string, object> adminData = new Dictionary<string, object>();
+
+            foreach (var kvp in adminUsers)
+            {
+                // Add admin data to the dictionary as objects
+                adminData.Add(kvp.Key, kvp.Value);
+            }
+
+            return adminData;
+        }
+    }
+    public class AdminMenu
     {
         /// <summary>
         /// Implementering av AdminMenu.
@@ -153,7 +207,7 @@ namespace DotNetDynamosRevamp
 
         }
     }
-    public class AdminRegisterCustomer 
+    public class AdminRegisterCustomer
     {
         /// <summary>
         /// Implementering av RegisterCustomer.
@@ -162,19 +216,6 @@ namespace DotNetDynamosRevamp
         {
             Customer customer = new Customer();
             customer.RegisterUser();
-        }
-    }
-    public class AdminUserList : IAdminDictionary
-    {
-        /// <summary>
-        /// Implementering av IAdminDictionary /N.
-        /// </summary>
-
-        public Dictionary<string, object> AdminUsers()
-        {
-            Dictionary<string, object> adminUsers = new Dictionary<string, object>();
-
-            return adminUsers;
         }
     }
 }
